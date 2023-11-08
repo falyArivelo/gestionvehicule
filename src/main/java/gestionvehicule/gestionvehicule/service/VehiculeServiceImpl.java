@@ -25,8 +25,8 @@ public class VehiculeServiceImpl implements VehiculeService{
     @Override
     public Vehicule update(int idVehicule, Vehicule vehicule) {
         return vehiculeRepository.findById(idVehicule).map(v->{
-            v.setNom(vehicule.getNom());
-            v.setNumero(vehicule.getNumero());
+            v.setMarque(vehicule.getMarque());
+            v.setModele(vehicule.getModele());
             return  vehiculeRepository.save(v);
         }).orElseThrow(()-> new RuntimeException("Vehicule non trouvé !"));
     }
@@ -36,4 +36,5 @@ public class VehiculeServiceImpl implements VehiculeService{
         vehiculeRepository.deleteById(idVehicule);
         return "produit supprimer !";
     }
+
 }

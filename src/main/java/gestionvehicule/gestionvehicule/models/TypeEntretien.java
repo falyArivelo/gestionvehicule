@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "typeentretiens")
 
@@ -16,4 +18,7 @@ public class TypeEntretien {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idTypentretien;
     String type;
+
+    @OneToMany(mappedBy = "typeEntretien")
+    private Set<Entretien> entretiens;
 }

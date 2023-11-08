@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "assurances")
 
@@ -19,5 +21,6 @@ public class CompagnieAssurance {
     String nom;
     String adresse;
 
-
+    @OneToMany(mappedBy = "compagnieAssurance")
+    private Set<Assurance> assurances;
 }

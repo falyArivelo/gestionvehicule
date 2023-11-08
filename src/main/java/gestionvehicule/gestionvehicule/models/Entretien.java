@@ -24,7 +24,6 @@ public class Entretien {
     @ManyToOne()
     @JoinColumn(name = "idTypeEntretien")
     TypeEntretien typeEntretien;
-
     LocalDate dateEntretien;
     double cout;
     String description;

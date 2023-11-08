@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "typeassurances")
 
@@ -16,4 +18,7 @@ public class TypeAssurance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int idTypeAssurance;
     String type;
+
+    @OneToMany(mappedBy = "typeAssurance")
+    private Set<Assurance> assurances;
 }
