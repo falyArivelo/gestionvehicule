@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.Set;
 
 @Entity
-@Table(name = "TypeVehicules")
+@Table(name = "typeVehicules")
 
 @NoArgsConstructor
 
@@ -20,6 +20,9 @@ public class TypeVehicule {
     private Set<Vehicule> vehicules;
 
 
+    public TypeVehicule(int idTypeVehicule) {
+        this.idTypeVehicule = idTypeVehicule;
+    }
 
     public int getIdTypeVehicule() {
         return idTypeVehicule;
